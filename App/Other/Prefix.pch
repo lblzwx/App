@@ -16,6 +16,8 @@
 #ifdef __OBJC__  // 每一个OC文件都会定义这个宏
 #import <Availability.h>
 #import <UIKit/UIKit.h>
+#import "Singleton.h"
+
 #define Keywindow [UIApplication sharedApplication].keyWindow
 #define ScreenSizes [UIScreen mainScreen].bounds
 #define iOS8 ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0)

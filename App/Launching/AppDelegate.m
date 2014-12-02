@@ -9,8 +9,6 @@
 #import "AppDelegate.h"
 #import "HomeController.h"
 
-
-
 @interface AppDelegate ()
 
 @end
@@ -27,12 +25,13 @@
         [application registerUserNotificationSettings:setting];
     }
 #endif
-    
+
     self.window = [[UIWindow alloc]initWithFrame:ScreenSizes];
     self.window.rootViewController = [[HomeController alloc]init];
     [self.window makeKeyAndVisible];
     return YES;
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     
