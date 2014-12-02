@@ -36,7 +36,7 @@
  */
 + (void)POST:(NSString *)URLString parameters:(id)parameters success:(void (^)( id responseObject))success failure:(void (^)(NSError *error))failure;
 /**
- *  带有图片的POST数据提交
+ *  带有单张图片的POST数据提交
  *
  *  @param URLString   需要发生的网址
  *  @param parameters  需要传递的参数

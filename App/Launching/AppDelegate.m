@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "HomeController.h"
+
+
 
 @interface AppDelegate ()
 
@@ -16,7 +19,18 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+#ifdef __IPHONE_8_0
+    //只有在iOS8中需要注册通知
+    if (iOS8) {
+        UIUserNotificationSettings *setting  = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge categories:nil];
+        [application registerUserNotificationSettings:setting];
+    }
+#endif
+    
+    self.window = [[UIWindow alloc]initWithFrame:ScreenSizes];
+    self.window.rootViewController = [[HomeController alloc]init];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

@@ -1,0 +1,28 @@
+//
+//  App.pch
+//  App
+//
+//  Created by 李保路 on 14-12-1.
+//  Copyright (c) 2014年 IT-Hamal. All rights reserved.
+//
+/**
+ Prefix header
+ 
+ 包含在此文件的头文件会在所有文件中包含，不用另引入
+ 
+ 但注意不要包含过多的文件，这会减慢每次编译的速度
+ */
+// 默认路径前面加了$(SRCROOT)
+#ifdef __OBJC__  // 每一个OC文件都会定义这个宏
+#import <Availability.h>
+#import <UIKit/UIKit.h>
+#define Keywindow [UIApplication sharedApplication].keyWindow
+#define ScreenSizes [UIScreen mainScreen].bounds
+#define iOS8 ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0)
+#ifdef DEBUG /// 调试阶段
+#define AppLog(...) NSLog(__VA_ARGS__)
+#else // 发布阶段
+#define AppLog(...)
+#endif
+
+#endif
