@@ -2,8 +2,8 @@
 //  Category.m
 //  lblzwx
 //
-//  Created by 李保路 on 14-11-17.
-//  Copyright (c) 2014年 Chinamobo. All rights reserved.
+//  Created by 李保路 on 13-11-17.
+//  Copyright (c) 2013年 IT-Hamal. All rights reserved.
 //
 
 #import "Category.h"
@@ -14,6 +14,14 @@
 
 @end
 
+
+@implementation  UIWebView (BL)
+
+- (void)fontChange:(NSString *)value {
+    NSString* str1 =[NSString stringWithFormat:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '%@%%'",value];
+    [self stringByEvaluatingJavaScriptFromString:str1];
+}
+@end
 
 @implementation  UIAlertView (BL)
 

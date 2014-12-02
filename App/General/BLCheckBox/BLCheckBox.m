@@ -2,8 +2,8 @@
 //  BLCheckBox.m
 //  lblzwx
 //
-//  Created by 李保路 on 14-11-16.
-//  Copyright (c) 2014年 Chinamobo. All rights reserved.
+//  Created by 李保路 on 13-11-16.
+//  Copyright (c) 2013年 IT-Hamal. All rights reserved.
 //
 
 #import "BLCheckBox.h"
