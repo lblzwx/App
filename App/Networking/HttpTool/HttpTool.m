@@ -9,7 +9,18 @@
 #import "HttpTool.h"
 #import "AFNetworking.h"
 #import "uploadParam.h"
+
+@interface HttpTool ()<UIAlertViewDelegate>
+
+@end
+
 @implementation HttpTool
++(void)doUpdate{
+    AFNetworkReachabilityManager *manger = [[AFNetworkReachabilityManager alloc]init];
+    if (!manger.reachable) {
+        [UIAlertView showWithTitle:@"提示" message:@"可能尚未联网，请检查你的网络连接" buttonTitle:@"OK"];
+    }
+}
 
 //POST
 +(void)POST:(NSString *)URLString parameters:(id)parameters success:(void (^)(id))success failure:(void (^)(NSError *))failure{

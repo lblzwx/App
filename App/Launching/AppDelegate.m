@@ -8,7 +8,8 @@
 
 #import "AppDelegate.h"
 #import "HomeController.h"
-
+#import "HttpTool.h"
+#import "AppUpdate.h"
 @interface AppDelegate ()
 
 @end
@@ -25,6 +26,8 @@
         [application registerUserNotificationSettings:setting];
     }
 #endif
+//检测网络状态
+    //[HttpTool doUpdate];
 
     self.window = [[UIWindow alloc]initWithFrame:ScreenSizes];
     self.window.rootViewController = [[HomeController alloc]init];

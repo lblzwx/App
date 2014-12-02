@@ -17,6 +17,7 @@
 #import <Availability.h>
 #import <UIKit/UIKit.h>
 #import "Singleton.h"
+#import "Category.h"
 
 #define Keywindow [UIApplication sharedApplication].keyWindow
 #define ScreenSizes [UIScreen mainScreen].bounds

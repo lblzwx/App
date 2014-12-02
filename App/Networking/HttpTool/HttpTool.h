@@ -45,5 +45,9 @@
  *  @param failure     失败回掉
  */
 + (void)upload:(NSString *)URLString parameters:(id)parameters uploadParam:(uploadParam *)uploadParam  success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
+/**
+ *  检测网络状态
+ */
++(void)doUpdate;
 @end
 
