@@ -1,20 +1,24 @@
 //
-//  HomeController.m
+//  Example.m
 //  App
 //
-//  Created by 李保路 on 13-12-1.
-//  Copyright (c) 2013年 IT-Hamal. All rights reserved.
+//  Created by 李保路 on 14-12-3.
+//  Copyright (c) 2014年 IT-Hamal. All rights reserved.
 //
 
-#import "HomeController.h"
+#import "Example.h"
+
+
 #import "LoadingView.h"
-@interface HomeController ()
+
+@interface Example ()
 
 @property (nonatomic ,assign) NSInteger selectedCount;
 @property (nonatomic, strong) LoadingView *friendlyLoadingView;
+
 @end
 
-@implementation HomeController
+@implementation Example
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -55,5 +59,6 @@
         } else {
             [weakSelf.friendlyLoadingView showReloadViewWithText:@"加载失败，请点击刷新按钮重新加载。"];
         }
-});
-}@end
+    });
+}
+@end
