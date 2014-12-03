@@ -27,8 +27,13 @@
     }
 #endif
 //检测网络状态
-    //[HttpTool doUpdate];
+    
+    //[HttpTool isNetWorkReachable];
+   // NSLog(@"%d",[HttpTool isNetWorkReachable]);
 
+//默认网络菊花在转
+    application.networkActivityIndicatorVisible = YES;
+    
     self.window = [[UIWindow alloc]initWithFrame:ScreenSizes];
     self.window.rootViewController = [[HomeController alloc]init];
     [self.window makeKeyAndVisible];

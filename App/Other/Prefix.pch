@@ -18,6 +18,7 @@
 #import <UIKit/UIKit.h>
 #import "Singleton.h"
 #import "Category.h"
+#import "UIView+Frame.h"
 
 #define Keywindow [UIApplication sharedApplication].keyWindow
 #define ScreenSizes [UIScreen mainScreen].bounds

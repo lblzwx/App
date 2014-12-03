@@ -17,9 +17,22 @@
 
 @implementation  UIWebView (BL)
 
-- (void)fontChange:(NSString *)value {
+- (void)changeWebkitfont:(NSString *)value {
     NSString* str1 =[NSString stringWithFormat:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '%@%%'",value];
-    [self stringByEvaluatingJavaScriptFromString:str1];
+    [self stringByEvaluatingJavaScrip:str1];
+}
+-(void)stringByEvaluatingJavaScrip:(NSString *)String{
+    [self stringByEvaluatingJavaScriptFromString:String];
+}
+//改变字体颜色  gray
+-(void)changeWebkitTextFillColor:(NSString *)String{
+    NSString *color = [NSString stringWithFormat:@"document.getElementsByTagName('body')[0].style.webkitTextFillColor= '%@'",String];
+    [self stringByEvaluatingJavaScrip:color];
+}
+//改变北京颜色  black
+-(void)changeWebkitBackgroundColor:(NSString *)String{
+    NSString *color = [NSString stringWithFormat:@"document.getElementsByTagName('body')[0].style.background='%@'",String];
+    [self stringByEvaluatingJavaScrip:color];
 }
 @end
 

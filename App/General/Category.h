@@ -18,8 +18,11 @@
 /**
  *  修改文字大小
  */
-- (void)fontChange:(NSString *)value;
-
+- (void)changeWebkitfont:(NSString *)value;
+//改变字体颜色  gray
+-(void)changeWebkitTextFillColor:(NSString *)String;
+//改变北京颜色  black
+-(void)changeWebkitBackgroundColor:(NSString *)String;
 
 @end
 
@@ -42,7 +45,7 @@
 + (UIImage *)resizedImageWithImage:(UIImage *)image;
 @end
 
-
+//一下代码一般用在注册的时候使用
 @interface NSString (App)
 /*
  *email 格式检查

@@ -48,6 +48,6 @@
 /**
  *  检测网络状态
  */
-+(void)doUpdate;
++ (BOOL)isNetWorkReachable;
 @end
 

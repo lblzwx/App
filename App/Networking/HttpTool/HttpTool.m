@@ -9,18 +9,51 @@
 #import "HttpTool.h"
 #import "AFNetworking.h"
 #import "uploadParam.h"
+#import "AFNetworkReachabilityManager.h"
 
 @interface HttpTool ()<UIAlertViewDelegate>
 
 @end
 
 @implementation HttpTool
-+(void)doUpdate{
-    AFNetworkReachabilityManager *manger = [[AFNetworkReachabilityManager alloc]init];
-    if (!manger.reachable) {
-        [UIAlertView showWithTitle:@"提示" message:@"可能尚未联网，请检查你的网络连接" buttonTitle:@"OK"];
-    }
++ (BOOL)isNetWorkReachable{
+        AFNetworkReachabilityManager *manger = [[AFNetworkReachabilityManager alloc]init];
+    //    if (!manger.reachable) {
+    //        [UIAlertView showWithTitle:@"提示" message:@"可能尚未联网，请检查你的网络连接" buttonTitle:@"OK"];
+    //    }
+    
+    [manger startMonitoring];  //开启网络监视器；
+    
+    [manger setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        
+        switch (status) {
+            case AFNetworkReachabilityStatusNotReachable:{
+                NSLog(@"网络不通" );
+
+                break;
+            }
+            case AFNetworkReachabilityStatusReachableViaWiFi:{
+                NSLog(@"网络通过WIFI连接" );
+
+                break;
+            }
+                
+            case AFNetworkReachabilityStatusReachableViaWWAN:{
+                NSLog(@"网络通过流量连接");
+
+                break;
+            }
+            default:
+                break;
+        }
+        
+    }];
+    
+    
+    return [AFNetworkReachabilityManager sharedManager].isReachable;
 }
+
+
 
 //POST
 +(void)POST:(NSString *)URLString parameters:(id)parameters success:(void (^)(id))success failure:(void (^)(NSError *))failure{
@@ -57,7 +90,7 @@
 //上传图片
 +(void)upload:(NSString *)URLString parameters:(uploadParam *)parameters uploadParam:(uploadParam *)uploadParam success:(void (^)(id))success failure:(void (^)(NSError *))failure{
     AFHTTPRequestOperationManager *manger = [AFHTTPRequestOperationManager manager];
-   
+    
     [manger POST:URLString parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         /**
          *  拼接参数
