@@ -10,7 +10,12 @@
 #import "HomeController.h"
 #import "HttpTool.h"
 #import "AppUpdate.h"
+
+#import <AVFoundation/AVFoundation.h>
+
+
 @interface AppDelegate ()
+
 
 @end
 
@@ -26,12 +31,12 @@
         [application registerUserNotificationSettings:setting];
     }
 #endif
-//检测网络状态
+    //检测网络状态
     
     //[HttpTool isNetWorkReachable];
-   // NSLog(@"%d",[HttpTool isNetWorkReachable]);
-
-//默认网络菊花在转
+    // NSLog(@"%d",[HttpTool isNetWorkReachable]);
+    
+    //默认网络菊花在转
     application.networkActivityIndicatorVisible = YES;
     
     self.window = [[UIWindow alloc]initWithFrame:ScreenSizes];
@@ -46,18 +51,19 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-   
+    
+    
 }
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-
+    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-
+    
 }
 
 @end
